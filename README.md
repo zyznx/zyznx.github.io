@@ -1,2 +1,2 @@
-# Rokkregin.github.io
-Private Test Space
+# 个人实验测试作业项目
+用于进行课程作业的测量实验，纯私人项目，纯前台JS实现。
