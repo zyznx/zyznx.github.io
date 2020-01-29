@@ -1,5 +1,5 @@
 <html>
-<meta http-equiv="content-type" content="text/html;charset=UTF-8"/>
+<meta charset="utf-8">
 <head>
   <title>实验设计系统页面</title>
   <link rel="stylesheet" href="\js\jqueryui\jquery-ui.min.css">
@@ -7,29 +7,45 @@
   <link rel="stylesheet" href="\MyCss\mycss.css">
   <script src="\js\jqueryui\jquery.js"></script>
   <script src="\js\jqueryui\jquery-ui.min.js"></script>
-  <!--
-  <script>
-  $( function() {
-    $( "#dialog" ).dialog();
-  } );
-  </script>
-  -->
+  <script src="\js\FileSaver.js"></script>
 </head>
 <body bgcolor="#202020">
-  <div id="testitems">
-    <button class="My-button" onclick="test001Btn()">测试001</button>
-    <button class="My-button" onclick="test002Btn()">测试002</button>
-    <button class="My-button">测试003</button>
-    <button class="My-button">测试004</button>
-    <button class="My-button">测试005</button>
-    <button class="My-button">测试006</button>
-  </div>
-  <div id="testframe">
-  </div>
-
-
-
-  <script src="\js\UIScript.js"></script>
-  <script src="\js\WorkFuncs.js"></script>
+<div id="login_container" class="container"></div>
+<div id="test001_container" class="container">
+  <div id="test001-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 80px;height: 80px;"></div>
+</div>
+<div id="test002_container" class="container"></div>
+<div id="test003_container" class="container"></div>
+<div id="test004_container" class="container"></div>
+<div id="test005_container" class="container"></div>
+<div id="test006_container" class="container"></div>
+<div id="test007_container" class="container"></div>
+<div id="test008_container" class="container"></div>
+<div id="test009_container" class="container"></div>
+<div id="test010_container" class="container"></div>
+<div id="test011_container" class="container"></div>
+<div id="test012_container" class="container"></div>
+<div id="test013_container" class="container"></div>
+<div id="test014_container" class="container"></div>
+<div id="test015_container" class="container"></div>
+<div id="test016_container" class="container"></div>
+<div id="datamanager_container" class="container">
+  <table>
+    <tr>
+      <td>
+        <table id="dataTable" style="color: white;" border="1px">
+          <tr>
+            <td>试验时间</td>
+            <td>受试ID</td>
+            <td>试验名称</td>
+          </tr>
+        </table>
+      </td>
+      <td><button id="downloadBtn" class="My-button" onclick="dlBtnClick()">下载数据</button></td>
+    </tr>
+  </table>
+</div>
+<script src="\js\UIScript.js"></script>
+<script src="\js\WorkFuncs.js"></script>
 </body>
 </html>
