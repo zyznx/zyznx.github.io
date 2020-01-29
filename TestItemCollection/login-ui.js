@@ -34,7 +34,8 @@ function onLogin() {
         $('#login_container').css('visibility', 'hidden');
         testID = testNum;
         testCounter = 0;
-        mainProcess();
+        $('#mainFrame').css('visibility', 'visible');
+        $('#test000_container').css('visibility', 'visible');
     }
 }
 

@@ -9,27 +9,11 @@
   <script src="\js\jqueryui\jquery-ui.min.js"></script>
   <script src="\js\FileSaver.js"></script>
 </head>
-<body bgcolor="#202020">
+<body bgcolor="#202020" style="overflow: hidden;">
 <div id="login_container" class="container"></div>
-<div id="test001_container" class="container">
-  <div id="test001-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 80px;height: 80px;"></div>
-</div>
-<div id="test002_container" class="container"></div>
-<div id="test003_container" class="container"></div>
-<div id="test004_container" class="container"></div>
-<div id="test005_container" class="container"></div>
-<div id="test006_container" class="container"></div>
-<div id="test007_container" class="container"></div>
-<div id="test008_container" class="container"></div>
-<div id="test009_container" class="container"></div>
-<div id="test010_container" class="container"></div>
-<div id="test011_container" class="container"></div>
-<div id="test012_container" class="container"></div>
-<div id="test013_container" class="container"></div>
-<div id="test014_container" class="container"></div>
-<div id="test015_container" class="container"></div>
-<div id="test016_container" class="container"></div>
 <div id="datamanager_container" class="container">
+  <span style="color: white">请及时下载与清理数据，数据大小不能超过5120KB，目前数据大小为：</span>
+  <span id="dataSize" style="color: white">xxxxxxx</span>
   <table>
     <tr>
       <td>
@@ -41,10 +25,77 @@
           </tr>
         </table>
       </td>
-      <td><button id="downloadBtn" class="My-button" onclick="dlBtnClick()">下载数据</button></td>
+      <td>
+        <button id="downloadBtn" class="My-button" onclick="dlBtnClick()">下载数据</button>
+        <button id="cleanBtn" class="My-button" onclick="cleanBtnClick()">清理数据</button>
+      </td>
     </tr>
   </table>
 </div>
+<table id="mainFrame" style="width: 100%;height: 100%;visibility: hidden;">
+  <tr>
+    <td width="80px">
+      <table>
+        <tr><button id="test001Btn" class="My-button My-button-navi" onclick="test001Click()">实验001</button></tr>
+        <tr><button id="test002Btn" class="My-button My-button-navi" onclick="test002Click()">实验002</button></tr>
+        <tr><button id="test003Btn" class="My-button My-button-navi" onclick="test003Click()">实验003</button></tr>
+        <tr><button id="test004Btn" class="My-button My-button-navi" onclick="test004Click()">实验004</button></tr>
+        <tr><button id="test005Btn" class="My-button My-button-navi" onclick="test005Click()">实验005</button></tr>
+        <tr><button id="test006Btn" class="My-button My-button-navi" onclick="test006Click()">实验006</button></tr>
+        <tr><button id="test007Btn" class="My-button My-button-navi" onclick="test007Click()">实验007</button></tr>
+        <tr><button id="test008Btn" class="My-button My-button-navi" onclick="test008Click()">实验008</button></tr>
+        <tr><button id="test009Btn" class="My-button My-button-navi" onclick="test009Click()">实验009</button></tr>
+        <tr><button id="test010Btn" class="My-button My-button-navi" onclick="test010Click()">实验010</button></tr>
+        <tr><button id="test011Btn" class="My-button My-button-navi" onclick="test011Click()">实验011</button></tr>
+        <tr><button id="test012Btn" class="My-button My-button-navi" onclick="test012Click()">实验012</button></tr>
+        <tr><button id="test013Btn" class="My-button My-button-navi" onclick="test013Click()">实验013</button></tr>
+        <tr><button id="test014Btn" class="My-button My-button-navi" onclick="test014Click()">实验014</button></tr>
+        <tr><button id="test015Btn" class="My-button My-button-navi" onclick="test015Click()">实验015</button></tr>
+        <tr><button id="test016Btn" class="My-button My-button-navi" onclick="test016Click()">实验016</button></tr>
+      </table>
+    </td>
+    <td width="100%">
+      <div id="test000_container" class="container" style="text-align: center;">
+        <span style="position: absolute;top:30%;right: 40%;color:rgb(200,200,200);font-size: 50px;">请在左侧选择要进行的实验</span>
+      </div>
+      <div id="test001_container" class="container">
+        <div id="test001-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test002_container" class="container">
+        <div id="test002-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test003_container" class="container">
+        <div id="test003-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test004_container" class="container">
+        <div id="test004-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test005_container" class="container">
+        <div id="test005-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test006_container" class="container">
+        <div id="test006-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test007_container" class="container">
+        <div id="test007-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test008_container" class="container">
+        <div id="test008-target" style="position:absolute; border: 1px solid #aed0ea;background: #d7ebf9;border-radius: 5px;width: 40px;height: 40px;"></div>
+      </div>
+      <div id="test009_container" class="container"></div>
+      <div id="test010_container" class="container"></div>
+      <div id="test011_container" class="container"></div>
+      <div id="test012_container" class="container"></div>
+      <div id="test013_container" class="container"></div>
+      <div id="test014_container" class="container"></div>
+      <div id="test015_container" class="container"></div>
+      <div id="test016_container" class="container"></div>
+
+    </td>
+  </tr>
+</table>
+
+
 <script src="\js\UIScript.js"></script>
 <script src="\js\WorkFuncs.js"></script>
 </body>
