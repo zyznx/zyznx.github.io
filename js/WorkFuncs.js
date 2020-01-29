@@ -27,7 +27,7 @@ var tempData = {};
 var testClick = function (testObj) {
     $('#test000_container').css('visibility', 'hidden');
     $('#' + testObj.name + 'Btn').css('color','rgb(255,194,0)');
-    alert('实验01：\n1.点击确定开始实验\n2.实验开始后，请迅速点击屏幕上出现的蓝色方块');
+    alert('实验' + testObj.test + '内容：\n1.点击确定开始实验\n2.实验开始后，请迅速点击屏幕上出现的蓝色方块');
     tempData[testObj.name] = {};
     tempData[testObj.name].tarPositionX = testObj.tarPositionX;
     tempData[testObj.name].tarPositionY = testObj.tarPositionY;
