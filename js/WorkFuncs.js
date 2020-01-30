@@ -27,6 +27,8 @@ var tempData = {};
 var testClick = function (testObj) {
     $('#test000_container').css('visibility', 'hidden');
     $('#' + testObj.name + 'Btn').css('color','rgb(255,194,0)');
+    $('#' + testObj.name + '-target').css('width', testObj.tarSize + 'px');
+    $('#' + testObj.name + '-target').css('height', testObj.tarSize + 'px');
     alert('实验' + testObj.test + '内容：\n1.点击确定开始实验\n2.实验开始后，请迅速点击屏幕上出现的蓝色方块');
     tempData[testObj.name] = {};
     tempData[testObj.name].tarPositionX = testObj.tarPositionX;
@@ -109,7 +111,15 @@ var testClick = function (testObj) {
 var testDrag = function (testObj) {
     $('#test000_container').css('visibility', 'hidden');
     $('#' + testObj.name + 'Btn').css('color','rgb(255,194,0)');
-    alert('实验' + testObj.test + '内容：\n1.点击确定开始实验\n2.实验开始后，请将屏幕上出现的蓝色方块拖放于绿色方框中');
+    alert('实验' + testObj.test + '内容：\n1.点击确定开始实验\n2.实验开始后，请将屏幕上出现的蓝色方块拖放于红色方框中');
+
+    $('#' + testObj.name + '-target').css('width', testObj.tarSize + 'px');
+    $('#' + testObj.name + '-target').css('height', testObj.tarSize + 'px');
+
+    $('#' + testObj.name + '-box').css('width', testObj.tarSize + 'px');
+    $('#' + testObj.name + '-box').css('height', testObj.tarSize + 'px');
+
+    $('#' + testObj.name + '-box').css('border', testObj.errSize + 'px solid #ff353b');
 
     tempData[testObj.name] = {};
     tempData[testObj.name].tarPositionX = testObj.tarPositionX;
@@ -144,7 +154,10 @@ var testDrag = function (testObj) {
 
             var targetPos = $('#' + testObj.name + '-target').position();
             var boxPos = $('#' + testObj.name + '-box').position();
-            if((Math.abs(targetPos.left - boxPos.left) > testObj.errSize) || (Math.abs(targetPos.top - boxPos.top) > testObj.errSize)){tempData[testObj.name].resultStack.push(false);}
+
+            console.log(targetPos.left + ',' + targetPos.top + ';' + boxPos.left + ',' + boxPos.top);
+
+            if((Math.abs(targetPos.left - testObj.errSize - boxPos.left) > testObj.errSize) || (Math.abs(targetPos.top - testObj.errSize - boxPos.top) > testObj.errSize)){tempData[testObj.name].resultStack.push(false);}
             else{tempData[testObj.name].resultStack.push(true);}
 
             tempData[testObj.name].clickCounter++;
@@ -187,6 +200,7 @@ var test001Click = function () {
     testObj.startPosition = [600, 200];
     testObj.stepLength = 200;
     testObj.test = 'Click001';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -199,6 +213,7 @@ var test002Click = function () {
     testObj.startPosition = [600, 200];
     testObj.stepLength = 200;
     testObj.test = 'Click002';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -211,6 +226,7 @@ var test003Click = function () {
     testObj.startPosition = [600, 200];
     testObj.stepLength = 200;
     testObj.test = 'Click003';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -223,6 +239,7 @@ var test004Click = function () {
     testObj.startPosition = [600, 200];
     testObj.stepLength = 200;
     testObj.test = 'Click004';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -235,6 +252,7 @@ var test005Click = function () {
     testObj.startPosition = [600, 200];
     testObj.stepLength = 200;
     testObj.test = 'Click005';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -247,6 +265,7 @@ var test006Click = function () {
     testObj.startPosition = [600, 400];
     testObj.stepLength = 200;
     testObj.test = 'Click006';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -259,6 +278,7 @@ var test007Click = function () {
     testObj.startPosition = [800, 400];
     testObj.stepLength = 200;
     testObj.test = 'Click007';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -271,6 +291,7 @@ var test008Click = function () {
     testObj.startPosition = [800, 400];
     testObj.stepLength = 200;
     testObj.test = 'Click008';
+    testObj.tarSize = 40;
     testClick(testObj);
 };
 
@@ -284,6 +305,7 @@ var test009Click = function () {
     testObj.stepLength = 200;
     testObj.test = 'Drag001';
     testObj.errSize = 5;
+    testObj.tarSize = 40;
     testDrag(testObj);
 };
 
@@ -310,6 +332,7 @@ var test011Click = function () {
     testObj.stepLength = 200;
     testObj.test = 'Drag003';
     testObj.errSize = 5;
+    testObj.tarSize = 40;
     testDrag(testObj);
 };
 
@@ -323,6 +346,7 @@ var test012Click = function () {
     testObj.stepLength = 200;
     testObj.test = 'Drag004';
     testObj.errSize = 5;
+    testObj.tarSize = 40;
     testDrag(testObj);
 };
 
@@ -336,6 +360,7 @@ var test013Click = function () {
     testObj.stepLength = 200;
     testObj.test = 'Drag005';
     testObj.errSize = 5;
+    testObj.tarSize = 40;
     testDrag(testObj);
 };
 
@@ -349,6 +374,7 @@ var test014Click = function () {
     testObj.stepLength = 200;
     testObj.test = 'Drag006';
     testObj.errSize = 5;
+    testObj.tarSize = 40;
     testDrag(testObj);
 };
 
@@ -362,6 +388,7 @@ var test015Click = function () {
     testObj.stepLength = 200;
     testObj.test = 'Drag007';
     testObj.errSize = 5;
+    testObj.tarSize = 40;
     testDrag(testObj);
 };
 
@@ -374,7 +401,8 @@ var test016Click = function () {
     testObj.startPosition = [800, 400];
     testObj.stepLength = 200;
     testObj.test = 'Drag008';
-    testObj.errSize = 5;
+    testObj.errSize = 10;
+    testObj.tarSize = 20;
     testDrag(testObj);
 };
 
